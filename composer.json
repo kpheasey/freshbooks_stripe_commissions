@@ -1,0 +1,7 @@
+{
+  "require": {
+    "stripe/stripe-php": "3.*",
+    "katzgrau/klogger": "dev-master",
+    "vlucas/phpdotenv": "2.0.x-dev"
+  }
+}
