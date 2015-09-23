@@ -12,3 +12,5 @@ Update ENV vars inside of .env
 Install dependencies
 
     composer install
+
+Create a webhook in Stripe that points to the publicly accessible installation.
