@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bdedaf3bcfd83c2ae8c56854f0a38522",
-    "content-hash": "b75844172134b1aa4409d15161f03e85",
+    "hash": "583edb81ea95e09b494a03043f947208",
+    "content-hash": "f6cb50fe23f6f30aa5a6fd67b4a093dd",
     "packages": [
         {
             "name": "katzgrau/klogger",
@@ -94,6 +94,55 @@
                 "psr-3"
             ],
             "time": "2012-12-21 11:40:51"
+        },
+        {
+            "name": "rtconner/freshbooks-api",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rtconner/freshbooks-api.git",
+                "reference": "07201bee4729498950a04caefbe9c0ce071242c0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rtconner/freshbooks-api/zipball/07201bee4729498950a04caefbe9c0ce071242c0",
+                "reference": "07201bee4729498950a04caefbe9c0ce071242c0",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Freshbooks\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "jboesch",
+                    "homepage": "https://github.com/jboesch/FreshBooksRequest-PHP-API"
+                },
+                {
+                    "name": "JasonReading",
+                    "homepage": "http://jasonreading.com"
+                },
+                {
+                    "name": "Robert Conner",
+                    "homepage": "http://smartersoftware.net"
+                }
+            ],
+            "description": "Wrapper to the FreshBooks API",
+            "keywords": [
+                "api",
+                "freshbooks"
+            ],
+            "time": "2014-11-23 22:14:47"
         },
         {
             "name": "stripe/stripe-php",
@@ -202,7 +251,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "katzgrau/klogger": 20,
-        "vlucas/phpdotenv": 20
+        "vlucas/phpdotenv": 20,
+        "rtconner/freshbooks-api": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

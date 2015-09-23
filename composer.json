@@ -2,6 +2,7 @@
   "require": {
     "stripe/stripe-php": "3.*",
     "katzgrau/klogger": "dev-master",
-    "vlucas/phpdotenv": "2.0.x-dev"
+    "vlucas/phpdotenv": "2.0.x-dev",
+    "rtconner/freshbooks-api": "dev-master"
   }
 }
