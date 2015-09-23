@@ -5,6 +5,7 @@ require_once('./config.php');
 $input = @file_get_contents("php://input");
 $event_json = json_decode($input);
 
-$logger->debug('Incoming Stripe event.', $event_json);
+print_r($input);
+//$logger->debug('Incoming Stripe event.', $event_json);
 
 http_response_code(200); // PHP 5.4 or greater
