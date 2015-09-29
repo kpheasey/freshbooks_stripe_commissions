@@ -6,18 +6,37 @@ $input = @file_get_contents("php://input");
 $logger->info('Incoming Stripe event.', json_decode($input, TRUE));
 
 $event = json_decode($input);
-$event = $event->data->object;
 
+if ($event->type != 'charge.succeeded') {
+    exit;
+}
+
+$charge = $event->data->object;
+
+# amount
+$balanceTransaction = Stripe\BalanceTransaction::retrieve($charge->balance_transaction);
+$fee = $balanceTransaction->fee / 100;
+
+# category_id
 $fbCategory = FbCategory::findByName($fb, 'Commissions');
+$categoryId = $fbCategory->getId();
 
+# date
+$date = date('c', $charge->created);
+
+# notes
+$notes = $charge->description;
+$notes = chop($notes, ' - ');
+
+# form request
 $request = array( 'expense' =>
     array(
         'staff_id' => 1,
-        'category_id' => $fbCategory->getId(),
-        'amount' => ($event->amount / 100),
+        'category_id' => $categoryId,
+        'amount' => $fee,
         'vendor' => 'Stripe',
-        'date' => date('c', $event->created),
-        'notes' => $event->description
+        'date' => $date,
+        'notes' => $notes
     )
 );
 $logger->debug('New FreshBooks Expense request', $request);
